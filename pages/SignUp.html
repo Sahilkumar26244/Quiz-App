@@ -13,11 +13,55 @@
         <h2>Signup</h2>
         <h3>Enter your credentials</h3>
         <form class="login-form" >
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Name" id="name" />
+            <input type="text" placeholder="Email" id="email" />
+            <input type="password" placeholder="Password" id="pass" />
             <a href="#" >Forget Your Password</a>
             <button>SIGN-UP</button>
         </form>
     </div>
 </body>
 </html>
+<script>
+    document.querySelector("button").addEventListener('click',signupFun);
+
+
+    function signupFun(){
+    event.preventDefault();
+
+    let isSignup = true;
+
+    // get value from form
+    var obj={
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("pass").value,
+    }
+ 
+    // get all users data from localStorage
+    var userData=JSON.parse(localStorage.getItem("userData")) || [];
+
+    // check if user already exist or not!!
+    userData.map((el) => {
+        if(el.email == obj.email){
+            signupSuccess = false
+        }
+});
+
+
+  if(isSignup)
+  {
+      // Add to local storage
+      userData.push(obj);
+      localStorage.setItem('userData',JSON.stringify(userData));
+      
+      // redirect to login
+      window.open("login.html","_self");
+  }
+  else
+    {
+    alert("User Already Exist, Please try agian!")
+    }
+
+}
+</script>

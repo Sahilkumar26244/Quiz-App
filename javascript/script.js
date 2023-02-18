@@ -80,7 +80,6 @@ next_btn.onclick = ()=>{
         startTimer(timeValue); //calling startTimer function
         startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
-        // next_btn.classList.remove("show"); //hide the next button
     }else{
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
@@ -93,7 +92,7 @@ next_btn.onclick = ()=>{
 function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
-    //creating a new span and div tag for question and option and passing the value using array index
+    //creating a new span and div tag for question and option and passing the value using array of index!
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
@@ -104,7 +103,7 @@ function showQuetions(index){
     
     const option = option_list.querySelectorAll(".option");
 
-    // set onclick attribute to all available options
+    // set onclick function to all options
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
@@ -115,8 +114,8 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 //if user clicked on option
 function optionSelected(answer){
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
+    clearInterval(counter); 
+    clearInterval(counterLine); 
     let userAns = answer.textContent; //getting user selected option
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items

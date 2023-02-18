@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    font-family: 'ABeeZee';
+}
+html,body{
+    height: 100%;
+   
+}
+a,button{
+    cursor: pointer;
+}
+@keyframes pan {
+    100% {background-position: 10% 40%;}
+}
+body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url('../assets/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: pan 6s infinite alternate linear;
+}

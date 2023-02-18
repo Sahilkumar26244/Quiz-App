@@ -13,11 +13,54 @@
         <h2>Login</h2>
         <h3>Enter your credentials</h3>
         <form class="login-form" >
-            <input type="text" placeholder="Username" />
-            <input type="text" placeholder="Password" />
+            <input type="text" placeholder="Email" id="email" />
+            <input type="text" placeholder="Password" id="password" />
             <a href="#" >Forget Your Password</a>
             <button>LOGIN</button>
         </form>
     </div>
 </body>
 </html>
+<script>
+    document.querySelector("button").addEventListener("click", loginFun);
+
+// submit form
+function loginFun() {
+  event.preventDefault();
+
+  let loginSuccess = true;
+
+  // get value from input
+  var obj = {
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  };
+
+  // add user to local storage
+  var userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  // check user info
+  userData.map((el) => {
+    // if user found
+    if ( el.email == obj.email && el.password == obj.password) {      
+      
+      // 
+      localStorage.setItem('loginSuccess',JSON.stringify({userDetail:el}));
+      
+      // redirect to quiz.html
+     window.location.href = '/index.html'
+
+      loginSuccess=false;
+    }
+    else if(el.email == obj.email){
+        // wrong password
+        alert("Wrong Password, Please Retry!")
+
+        loginSuccess=false;
+    }
+  });
+
+{loginSuccess? alert("User Not Found!"): "";}
+  // redirect to login
+}
+</script>
