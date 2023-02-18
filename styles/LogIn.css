@@ -10,7 +10,7 @@ a,button{
     cursor: pointer;
 }
 @keyframes pan {
-    100% {background-position: 15% 50%;}
+    100% {background-position: 10% 40%;}
 }
 body{
     display: grid;
