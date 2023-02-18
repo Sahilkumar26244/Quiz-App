@@ -14,6 +14,18 @@ const timeCount = document.querySelector(".timer .timer_sec");
 // start_btn.onclick = ()=>{
 //     info_box.classList.add("activeInfo"); //show info box
 // }
+isLogin()
+function isLogin() {
+
+  let data = JSON.parse(localStorage.getItem("loginSuccess"))
+
+  console.log(data)
+  
+  if(!data){
+    window.open("/pages/SignUp.html", "_self")
+  }
+  
+}
 
 // if exitQuiz button clicked
 exit_btn.onclick = ()=>{
