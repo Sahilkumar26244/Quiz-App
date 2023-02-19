@@ -21,6 +21,12 @@ function isLogin() {
   
 }
 
+const userName = JSON.parse(localStorage.getItem('userData'));
+const userNameCurr = userName[userName.length - 1 ].name;
+
+const nn = document.querySelector('.your-name')
+nn.innerHTML = "Welcome back " + userNameCurr + ".."
+
 
 
 // if continueQuiz button clicked
