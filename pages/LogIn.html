@@ -14,10 +14,13 @@
         <h3>Enter your credentials</h3>
         <form class="login-form" >
             <input type="text" placeholder="Email" id="email" />
-            <input type="text" placeholder="Password" id="password" />
+            <input type="password" placeholder="Password" id="password" />
             <a href="#" >Forget Your Password</a>
             <button>LOGIN</button>
         </form>
+        <div class="already" >
+          <a href="./SignUp.html" >Not Signed-Up!</a>
+      </div>
     </div>
 </body>
 </html>
@@ -28,7 +31,7 @@
 function loginFun() {
   event.preventDefault();
 
-  let loginSuccess = true;
+  let isLogin = true;
 
   // get value from input
   var obj = {
@@ -41,22 +44,25 @@ function loginFun() {
 
   // check user info
   userData.map((el) => {
-    // if user found
-    if ( el.email == obj.email && el.password == obj.password) {      
+    // if user found than do this things!
+    if ( el.email == obj.email && el.password == obj.password) 
+    {      
+      //set isLogin to check the user loged in or not if he is not redirect to signup page! 
+      localStorage.setItem('isLogin',JSON.stringify({
+        userDetail:el
+      }));
       
-      // 
-      localStorage.setItem('loginSuccess',JSON.stringify({userDetail:el}));
-      
-      // redirect to quiz.html
-        window.location.href = '/index.html'
+      // redirect to index.html
+      window.location.href = '/index.html'
 
-      loginSuccess=false;
+      isLogin = false;
     }
-    else if(el.email == obj.email){
+    else if(el.email == obj.email)
+    {
         // wrong password
-        alert("Wrong Password, Please Retry!")
+        alert("Wrong Password, Please try again!")
 
-        loginSuccess=false;
+        isLogin=false;
     }
   });
 

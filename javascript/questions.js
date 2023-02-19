@@ -10,8 +10,19 @@ let questions = [
       "Hyper Tool Multi Language"
     ]
   },
-    {
+  {
     numb: 2,
+    question: "Javascript is an _____ language?",
+    answer: "Object-Oriented",
+    options: [
+      "Object-Oriented",
+      "Object-Based",
+      "Procedural",
+      "None of the above"
+    ]
+  },
+    {
+    numb: 3,
     question: "What does CSS stand for?",
     answer: "Cascading Style Sheet",
     options: [
@@ -22,7 +33,7 @@ let questions = [
     ]
   },
     {
-    numb: 3,
+    numb: 4,
     question: "What does PHP stand for?",
     answer: "Hypertext Preprocessor",
     options: [
@@ -33,7 +44,18 @@ let questions = [
     ]
   },
     {
-    numb: 4,
+    numb: 5,
+    question: "Which of the following keywords is used to define a variable in Javascript?",
+    answer: "Both A and B",
+    options: [
+      "var",
+      "let",
+      "Both A and B",
+      "None of the above"
+    ]
+  },
+  {
+    numb: 6,
     question: "What does SQL stand for?",
     answer: "Structured Query Language",
     options: [
@@ -44,7 +66,18 @@ let questions = [
     ]
   },
     {
-    numb: 5,
+    numb: 7,
+    question: "Which of the following methods is used to access HTML elements using Javascript?",
+    answer: "Both A and B",
+    options: [
+      "getElementbyId()",
+      "getElementByClassName()",
+      "Both A and B",
+      "None of the above"
+    ]
+  },
+  {
+    numb: 8,
     question: "What does XML stand for?",
     answer: "eXtensible Markup Language",
     options: [
@@ -55,14 +88,25 @@ let questions = [
     ]
   },
   {
-    numb: 6,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    numb: 9,
+    question: "How can a datatype be declared to be a constant type?",
+    answer: "const",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "const",
+      "var",
+      "let",
+      "const"
+    ]
+  },
+  {
+    numb: 10,
+    question: "Which of the following methods can be used to display data in some form using Javascript?",
+    answer: "All of the above",
+    options: [
+      "document.write()",
+      "console.log()",
+      "window.alert()",
+      "All of the above"
     ]
   }
   

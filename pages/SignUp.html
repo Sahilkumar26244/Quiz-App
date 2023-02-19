@@ -19,20 +19,24 @@
             <a href="#" >Forget Your Password</a>
             <button>SIGN-UP</button>
         </form>
+        <div class="already" >
+            <a href="./LogIn.html" >Already Signed-Up</a>
+        </div>
     </div>
 </body>
 </html>
 <script>
-    document.querySelector("button").addEventListener('click',signupFun);
+    document.querySelector("button").addEventListener('click',signupFunction);
 
 
-    function signupFun(){
+    function signupFunction(){
     event.preventDefault();
 
     let isSignup = true;
 
-    // get value from form
-    var obj={
+    // get value from form tag
+    var obj = 
+    {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         password: document.getElementById("pass").value,
